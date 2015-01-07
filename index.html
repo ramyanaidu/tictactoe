@@ -23,17 +23,23 @@
         <form name=game>
           <table border=0>
             <td>
-              <table>
+              <table border=0>
                 <tr>
-                  <p>Which Coffee would you prefer?</p>
+                  <td>
+                    <table style="width: 100%;">
+                      <tr>
+                        <td id="c1"><a href="javascript:preference('X')"><img src="http://www.cafecoffeeday.com/images/ccd-logo-big.png" border=0 height=35 width=35 name=X alt="Top-Left"></a></td>
+                        <td id="c2"><a href="javascript:preference('Y')"><img src="http://img3.wikia.nocookie.net/__cb20120721153544/logopedia/images/1/1a/Starbucks_logo_2011.png" border=0 height=35 width=35 name=Y alt="Top-Center"></a></td>
+                        <td id="c3"><a href="javascript:preference('Z')"><img src="https://cdn4.iconfinder.com/data/icons/dot/256/cafe_coffee.png" border=0 height=35 width=35 name=Z alt="Top-Right"></a></td>
+                      </tr>
+                    </table>
+                  </td>
                 </tr>
                 <tr>
-                  <td><a href="javascript:preference('X')"><img src="http://www.cafecoffeeday.com/images/ccd-logo-big.png" border=0 height=20 width=20 name=X alt="Top-Left"></a></td>
-                  <td><a href="javascript:preference('Y')"><img src="http://img3.wikia.nocookie.net/__cb20120721153544/logopedia/images/1/1a/Starbucks_logo_2011.png" border=0 height=20 width=20 name=Y alt="Top-Center"></a></td>
-                  <td><a href="javascript:preference('Z')"><img src="https://cdn4.iconfinder.com/data/icons/dot/256/cafe_coffee.png" border=0 height=20 width=20 name=Z alt="Top-Right"></a></td>
+                  <td style="width: 100%;height: 100%"><p>Which Coffee would you prefer?</p></td>
                 </tr>
                 <tr>
-                  <p id="choice"></p>
+                  <td><p id="choice"></p></td>
                 </tr>
               </table>
             </td>

@@ -34,10 +34,13 @@ var t = 0;
 var wn = 0;
 var ls = 0;
 var ts = 0;
+var chosenFlag=0;
 function preference(ch) {
-  if (ch=="X") { x=ccdImage; document.getElementById("choice").innerHTML = "You have chosen CCD"; }
-  if (ch=="Y") { x=stbImage; document.getElementById("choice").innerHTML = "You have chosen Starbucks"; }
-  if (ch=="Z") { x=homImage; document.getElementById("choice").innerHTML = "You have chosen Home made coffee"; }
+  if(chosenFlag==1) alert("You cannot change choice in the middle of the game.")
+  if ((chosenFlag==0)&&(ch=="X")) { x=ccdImage; document.getElementById("choice").innerHTML = "You have chosen CCD"; }
+  if ((chosenFlag==0)&&(ch=="Y")) { x=stbImage; document.getElementById("choice").innerHTML = "You have chosen Starbucks"; }
+  if ((chosenFlag==0)&&(ch=="Z")) { x=homImage; document.getElementById("choice").innerHTML = "You have chosen Home made coffee"; }
+  chosenFlag=1;
 }
 function help() {
   alert("Welcome to Tic-Tac-Toe!  You play as the X's and the computer is the O's.  Select the square you want to put your X into by clicking them.  You cannot occupy a square that is already occupied. The first player to get three squares in a row wins.  Good Luck!!")
@@ -246,6 +249,7 @@ function reset() {
   choice=9;
   aRandomNumber = 0;
   comp = 0;
+  chosenFlag==0;
   document.images.A.src= blank;
   document.images.B.src= blank;
   document.images.C.src= blank;
