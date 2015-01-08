@@ -2,15 +2,13 @@
 var x = "";
 // Location of where you uploaded your site's x.jpg image
 
-var ccdImage = "http://www.cafecoffeeday.com/images/ccd-logo-big.png";
-var stbImage = "http://img3.wikia.nocookie.net/__cb20120721153544/logopedia/images/1/1a/Starbucks_logo_2011.png";
-var homImage = "https://cdn4.iconfinder.com/data/icons/dot/256/cafe_coffee.png";
-
+var ccdImage = "images/ccd.png";
+var stbImage = "images/starbucks.png";
 
 var o = "http://img3.wikia.nocookie.net/__cb20130403220653/sqmegapolis/images/3/30/X-mark-3-256.png";
 // Location of where you uploaded your site's o.jpg image
 
-var blank = "http://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Egypt_governorates_blank.png/597px-Egypt_governorates_blank.png";
+var blank = "images/blank.png";
 // Location of where you uploaded your site's blank.jpg image
 
 var pause = 0;
@@ -39,11 +37,7 @@ function preference(ch) {
   if(chosenFlag==1) alert("You cannot change choice in the middle of the game.")
   if ((chosenFlag==0)&&(ch=="X")) { x=ccdImage; document.getElementById("choice").innerHTML = "You have chosen CCD"; }
   if ((chosenFlag==0)&&(ch=="Y")) { x=stbImage; document.getElementById("choice").innerHTML = "You have chosen Starbucks"; }
-  if ((chosenFlag==0)&&(ch=="Z")) { x=homImage; document.getElementById("choice").innerHTML = "You have chosen Home made coffee"; }
   chosenFlag=1;
-}
-function help() {
-  alert("Welcome to Tic-Tac-Toe!  You play as the X's and the computer is the O's.  Select the square you want to put your X into by clicking them.  You cannot occupy a square that is already occupied. The first player to get three squares in a row wins.  Good Luck!!")
 }
 function logicOne() {
   if ((a==1)&&(b==1)&&(c==1)) all=1;
@@ -169,6 +163,8 @@ function checkSpace() {
   }
 }
 function yourChoice(chName) {
+  if(chosenFlag==0) ended();
+  else{
   pause = 0;
   if (all!=0) ended();
   if (all==0) {
@@ -182,6 +178,7 @@ function yourChoice(chName) {
     if (ok==0)taken();
     process();
     if ((all==0)&&(pause==0)) myChoice();
+	}
   }
 }
 function taken() {
@@ -213,7 +210,7 @@ function myChoice() {
   process();
 }
 function ended() {
-  alert("The game has already ended. To play a new game click the Play Again button.")
+  alert("Please answer the question to play.")
 }
 function process() {
   logicOne();
@@ -249,7 +246,7 @@ function reset() {
   choice=9;
   aRandomNumber = 0;
   comp = 0;
-  chosenFlag==0;
+  chosenFlag=0;
   document.images.A.src= blank;
   document.images.B.src= blank;
   document.images.C.src= blank;
